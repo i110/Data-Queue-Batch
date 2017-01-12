@@ -22,10 +22,10 @@ sub size       { scalar(@{ shift->{_queue} }) }
 sub available  { shift->{available} }
 sub batch_size { shift->{batch_size} }
 
-sub push { shift->enqueue(@_) }
+sub push :method { shift->enqueue(@_) }
 sub enqueue {
     my ($self, @values) = @_;
-    CORE::push(@{ $self->{_queue} }, @values);
+    push(@{ $self->{_queue} }, @values);
 
     my $unmarked = $self->size - $self->{available};
     my $marking = $unmarked - ($unmarked % $self->{batch_size});
@@ -37,7 +37,7 @@ sub enqueue {
     return;
 }
 
-sub shift { shift->dequeue(@_) }
+sub shift :method { shift->dequeue(@_) }
 sub dequeue {
     my ($self) = @_;
     return unless $self->{available};
