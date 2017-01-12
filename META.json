@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "FIFO data structure for \"batching\" items",
    "author" : [
       "Ichito Nagata <i.nagata110@gmail.com>"
    ],
@@ -52,6 +52,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/i110/Data-Queue-Batch/issues"
+      },
+      "homepage" : "https://github.com/i110/Data-Queue-Batch",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/i110/Data-Queue-Batch.git",
+         "web" : "https://github.com/i110/Data-Queue-Batch"
+      }
+   },
    "version" : "0.01",
    "x_serialization_backend" : "JSON::PP version 2.27300"
 }
