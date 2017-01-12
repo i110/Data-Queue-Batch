@@ -53,15 +53,15 @@ Data::Queue::Batch - FIFO data structure for "batching" items
 
 This is a simple FIFO data structure library to dequeue items by configured batch size.
 
-This will be usable for processing items in **batch**, like bulk insertion to the database, etc.
+This will be usable for processing items **in batch**, like bulk insertion to the database, etc.
 
 For clarification, imagine the following queue:
 
     <- head
     [ ooooo | ooo ]
 
-This queue's `batch_size` is 5, and there are 13 items in the queue.
-But you can see only first 10 items, and can't dequeue / peek last 3 items, because the second _batch_ hasn't been filled yet.
+This queue's `batch_size` is 5, and there are 8 items in the queue.
+But you can see only first 5 items, and can't dequeue / peek last 3 items, because the second _batch_ hasn't been filled yet.
 
 Then, push additional 3 items:
 
